@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%> <!-- fmt 태그 추가 -->
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<!-- fmt 태그 추가 -->
 
 <!DOCTYPE html>
 <html lang="ko">
@@ -127,19 +128,19 @@ th.notice_manage, td.notice_manage {
 					<tr>
 						<td class="notice_seq_no">${notice.seq_no}</td>
 						<td class="notice_target"><c:choose>
-								<c:when test="${notice.notice_target == 1}">전체</c:when>
-								<c:when test="${notice.notice_target == 2}">관리자</c:when>
-								<c:when test="${notice.notice_target == 3}">고객</c:when>
+								<c:when test="${notice.notice_target == 1}">전체(1)</c:when>
+								<c:when test="${notice.notice_target == 2}">관리자(2)</c:when>
+								<c:when test="${notice.notice_target == 3}">고객(3)</c:when>
 							</c:choose></td>
 						<td class="notice_title">${notice.notice_title}</td>
 						<td class="notice_regist_date">
-                            <!-- 날짜 포맷 변경 -->
-                            <fmt:formatDate value="${notice.regist_date}" pattern="yyyy-MM-dd" />
-                        </td>
-						<!-- 날짜 포맷 -->
+							<!-- 날짜 포맷 변경 --> <fmt:parseDate var="parsedDate"
+								value="${notice.regist_date}" pattern="yyyy-MM-dd HH:mm:ss" />
+							<fmt:formatDate value="${parsedDate}" pattern="yy-MM-dd" />
+						</td>
 						<td class="status">${notice.status == 1 ? '활성화' : '비활성화'}</td>
-						<td class="notice_manage">
-							<a class="btn btn-warning btn-custom"
+						<td class="notice_manage"><a
+							class="btn btn-warning btn-custom"
 							href="${pageContext.request.contextPath}/notice/detail?seq_no=${notice.seq_no}">상세</a>
 							<a class="btn btn-success btn-custom"
 							href="${pageContext.request.contextPath}/notice/update?seq_no=${notice.seq_no}">수정</a>
@@ -153,4 +154,3 @@ th.notice_manage, td.notice_manage {
 	</div>
 </body>
 </html>
- 
