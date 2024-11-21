@@ -49,6 +49,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/noticeus/list">사용자</a>
                     </li>
+                    <li>
+                      <a class="nav-link" href="/review/list">리뷰 관리자</a>
+                    </li>
+                    <li>
+                      <a class="nav-link" href="/reviewus/list">리뷰 사용자</a>
+                    </li>
                 </ul>
             </div>
         </div>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="goods.yj.mapper.ReviewMapper">
+
+	<!-- 전체 공지사항 조회 -->
+	<select id="getAllReview" resultType="goods.yj.vo.ReviewVO"> 
+	    SELECT seq_no,
+		goods_code, notice_title, regist_date, status 
+		FROM review_his 
+		WHERE status != 9 
+		ORDER BY seq_no ASC
+	</select>
+
+</mapper>
