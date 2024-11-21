@@ -132,7 +132,7 @@ th.notice_manage, td.notice_manage {
 						<td class="regist_date">
 							<!-- 날짜 포맷 변경 --> <fmt:parseDate var="parsedDate"
 								value="${review.regist_date}" pattern="yyyy-MM-dd HH:mm:ss" />
-							<fmt:formatDate value="${parsedDate}" pattern="yyyy-MM-dd" />
+							<fmt:formatDate value="${parsedDate}" pattern="yy-MM-dd" />
 						</td>
 						<td class="status">${review.status == 1 ? '활성화' : '비활성화'}</td>
 						<td class="review_manage"><a
