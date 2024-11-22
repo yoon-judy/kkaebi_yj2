@@ -101,7 +101,6 @@ th.notice_manage, td.notice_manage {
 	<div class="container">
 		<h3 class="my-4">리뷰 전체</h3>
 		<table class="table table-bordered table-striped">
-		 <form action="${pageContext.request.contextPath}/review/create" method="post">
 			<thead>
 				<tr>
 					<th class="review_seq_no">일련 번호</th>
@@ -119,7 +118,7 @@ th.notice_manage, td.notice_manage {
 					</tr>
 				</c:if>
 				
-				<c:forEach var="review" items="${review}">
+				<c:forEach var="reviewus" items="${review}">
 					<tr>
 						<td class="review_seq_no">${review.seq_no}</td>
 						<td class="notice_title">${review.notice_title}</td>
@@ -134,8 +133,6 @@ th.notice_manage, td.notice_manage {
 							href="${pageContext.request.contextPath}/review/detail?seq_no=${review.seq_no}">상세</a>
 							<a class="btn btn-success btn-custom"
 							href="${pageContext.request.contextPath}/review/update?seq_no=${review.seq_no}">수정</a>
-							<a class="btn btn-danger btn-custom"
-							href="${pageContext.request.contextPath}/review/delete?seq_no=${review.seq_no}">비활</a>
 						</td>
 					</tr>
 				</c:forEach>

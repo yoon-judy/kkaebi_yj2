@@ -18,4 +18,5 @@ public interface ReviewService {
 	void updateReview(ReviewVO review); // 리뷰 수정
 
 	void updateStatusToDeletedReview(int seq_no);
+
 }
