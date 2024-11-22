@@ -21,7 +21,7 @@ public class ReviewServiceImpl implements ReviewService {
 
     @Override
     public ReviewVO getReviewDetail(int seq_no) {
-        return reviewMapper.getReivewDetail(seq_no); // ReviewMapper를 통해 특정 리뷰 조회
+        return reviewMapper.getReviewDetail(seq_no); // ReviewMapper를 통해 특정 리뷰 조회
     }
 
     @Override

@@ -34,35 +34,35 @@
     <div class="container mt-5">
         <h1 class="text-center mb-4">리뷰 작성</h1>
         
-        <form action="submitReview" method="post">
+       <form action="${pageContext.request.contextPath}/review/create" method="post">
             <div class="mb-3">
-                <label for="reviewTitle" class="form-label">제목</label>
-                <input type="text" class="form-control" id="reviewTitle" name="reviewTitle" required>
+                <label for="notice_title" class="form-label">제목</label>
+                <input type="text" class="form-control" id="noticetitle" name="noticetitle" required>
             </div>
 
             <!-- 별점 선택 -->
             <div class="mb-3">
-                <label for="reviewRating" class="form-label">별점</label>
-                <div class="star-rating" id="star-rating">
+                <label for="" class="form-label">별점</label>
+                <div class="star_rating" id="star_rating">
                  <input type="radio" id="star-1" name="reviewRating" value="1" />
                     <label for="star-1">&#9733;</label>
                     <input type="radio" id="star-2" name="reviewRating" value="2" />
-                    <label for="star-2">&#9733;</label>
+                    <label for="star-2">&#9733&#9733;</label>
                     <input type="radio" id="star-3" name="reviewRating" value="3" />
-                    <label for="star-3">&#9733;</label>
+                    <label for="star-3">&#9733&#9733&#9733;</label>
                     <input type="radio" id="star-4" name="reviewRating" value="4" />
-                    <label for="star-4">&#9733;</label>
+                    <label for="star-4">&#9733&#9733&#9733&#9733;</label>
                      <input type="radio" id="star-5" name="reviewRating" value="5" />
-                    <label for="star-5">&#9733;</label>
+                    <label for="star-5">&#9733&#9733&#9733&#9733&#9733;</label>
                 </div>
             </div>
 
             <div class="mb-3">
                 <label for="reviewContent" class="form-label">내용</label>
-                <textarea class="form-control" id="reviewContent" name="reviewContent" rows="4" required></textarea>
+                <textarea class="form-control" id="notice_content" name="notice_content" rows="4" required></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary">리뷰 작성</button>
+            <button type="submit" class="btn btn-primary">작성</button>
         </form>
     </div>
 

@@ -10,7 +10,7 @@ public interface ReviewMapper {
 
 	List<ReviewVO> getAllReview(); // 전체 조회
 
-	ReviewVO getReivewDetail(int seq_no); // 리뷰 자세히 보기
+	ReviewVO getReviewDetail(int seq_no); // 리뷰 자세히 보기
 
 	void updateReview(ReviewVO review); // 업데이트
 

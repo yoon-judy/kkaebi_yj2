@@ -132,12 +132,12 @@ th.notice_manage, td.notice_manage {
 								<c:when test="${notice.notice_target == 1}">전체(1)</c:when>
 								<c:when test="${notice.notice_target == 2}">관리자(2)</c:when>
 								<c:when test="${notice.notice_target == 3}">고객(3)</c:when>
-							</c:choose></td>
+							</c:choose></td>     
 						<td class="notice_title">${notice.notice_title}</td>
 						<td class="notice_regist_date">
 							<!-- 날짜 포맷 변경 --> <fmt:parseDate var="parsedDate"
 								value="${notice.regist_date}" pattern="yyyy-MM-dd HH:mm:ss" />
-							<fmt:formatDate value="${parsedDate}" pattern="yyyy-MM-dd" />
+							<fmt:formatDate value="${parsedDate}" pattern="yy-MM-dd" />
 						</td>
 						<td class="status">${notice.status == 1 ? '활성화' : '비활성화'}</td>
 						<td class="notice_manage"><a

@@ -16,6 +16,7 @@ public class ReviewVO {
 	private int bgroup;
 	private int bstep;
 	private int bindent;
+	private int star_rating;
 	
 	// Getters and Setters
 
@@ -129,6 +130,14 @@ public class ReviewVO {
 
 	public void setBindent(int bindent) {
 		this.bindent = bindent;
+	}
+
+	public int getStar_rating() {
+		return star_rating;
+	}
+
+	public void setStar_rating(int star_rating) {
+		this.star_rating = star_rating;
 	}
 
 }

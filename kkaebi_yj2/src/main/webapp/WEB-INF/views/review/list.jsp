@@ -10,8 +10,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Review</title>
+
+<!-- Bootstrap 4 CSS -->
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- 페이지 스타일 정의 -->
 <style>
 body {
 	background-color: #f8f9fa;
@@ -95,13 +99,26 @@ th.notice_manage, td.notice_manage {
 .table-striped tbody tr:nth-child(odd) {
 	background-color: #f2f2f2;
 }
+
+/* 등록 버튼만 오른쪽 정렬 */
+.text-right {
+	text-align: right;
+}
 </style>
+
 </head>
 <body>
 	<div class="container">
 		<h3 class="my-4">리뷰 전체</h3>
+
+		<!-- 등록 버튼 오른쪽 정렬 -->
+		<div class="text-right mb-3">
+			<a href="${pageContext.request.contextPath}/review/create"
+				class="btn btn-primary btn-custom">등록</a>
+		</div>
+
+		<!-- 리뷰 목록 테이블 -->
 		<table class="table table-bordered table-striped">
-		 <form action="${pageContext.request.contextPath}/review/create" method="post">
 			<thead>
 				<tr>
 					<th class="review_seq_no">일련 번호</th>
@@ -113,24 +130,25 @@ th.notice_manage, td.notice_manage {
 				</tr>
 			</thead>
 			<tbody>
+				<!-- 리뷰 목록이 비어 있을 경우 처리 -->
 				<c:if test="${empty review}">
 					<tr>
 						<td colspan="6" class="text-center">검색 결과가 없습니다.</td>
 					</tr>
 				</c:if>
-				
+
+				<!-- 리뷰 목록 출력 -->
 				<c:forEach var="review" items="${review}">
 					<tr>
 						<td class="review_seq_no">${review.seq_no}</td>
+						<td class="goods_code">${review.goods_code}</td>
 						<td class="notice_title">${review.notice_title}</td>
-						<td class="regist_date">
-							<!-- 날짜 포맷 변경 --> <fmt:parseDate var="parsedDate"
-								value="${review.regist_date}" pattern="yyyy-MM-dd HH:mm:ss" />
-							<fmt:formatDate value="${parsedDate}" pattern="yyyy-MM-dd" />
+						<td class="regist_date">${review.regist_date}</td>
+						<td class="status">
+							<!-- 상태 표시 (활성화 / 비활성화) --> ${review.status == 1 ? '활성화' : '비활성화'}
 						</td>
-						<td class="status">${review.status == 1 ? '활성화' : '비활성화'}</td>
-						<td class="review_manage"><a
-							class="btn btn-warning btn-custom"
+						<td class="review_manage">
+							<!-- 관리 버튼들: 상세, 수정, 비활성화 --> <a class="btn btn-success btn-custom"
 							href="${pageContext.request.contextPath}/review/detail?seq_no=${review.seq_no}">상세</a>
 							<a class="btn btn-success btn-custom"
 							href="${pageContext.request.contextPath}/review/update?seq_no=${review.seq_no}">수정</a>

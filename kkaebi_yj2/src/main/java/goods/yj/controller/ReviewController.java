@@ -29,7 +29,7 @@ public class ReviewController {
     // 공지사항 상세
     @GetMapping("/detail")
     public String getReviewDetail(@RequestParam("seq_no") int seq_no, Model model) {
-        model.addAttribute("notice", reviewService.getReviewDetail(seq_no));
+        model.addAttribute("review", reviewService.getReviewDetail(seq_no));
         return "review/detail";
     }
 
@@ -44,7 +44,7 @@ public class ReviewController {
     @PostMapping("/create")
     public String createReview(@ModelAttribute ReviewVO reviewVO) {
         reviewService.createReview(reviewVO); // 공지사항 저장
-        return "redirect:/notice/list";
+        return "redirect:/review/list";
     }
 
     // 게시물 변경폼
@@ -56,7 +56,7 @@ public class ReviewController {
 
     // 게시물 변경처리
     @PostMapping("/update")
-    public String updateNotice(@ModelAttribute ReviewVO review) {
+    public String updateReview(@ModelAttribute ReviewVO review) {
         reviewService.updateReview(review); // 공지사항 업데이트
         return "redirect:/review/list"; // 목록으로 리디렉션
     }

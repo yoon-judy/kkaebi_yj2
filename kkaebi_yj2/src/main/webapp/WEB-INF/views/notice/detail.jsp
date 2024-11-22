@@ -86,28 +86,28 @@
                 <td>
                     <!-- 날짜 형식 변환 -->
                     <fmt:parseDate var="parsedNoticeStartDate" value="${notice.notice_st_date}" pattern="yyyy-MM-dd HH:mm:ss" />
-                    <fmt:formatDate value="${parsedNoticeStartDate}" pattern="yyyy-MM-dd" />
+                    <fmt:formatDate value="${parsedNoticeStartDate}" pattern="yy-MM-dd" />
                 </td>
             </tr>
             <tr>
                 <th>등록일자</th>
                 <td>
                     <fmt:parseDate var="parsedRegistDate" value="${notice.regist_date}" pattern="yyyy-MM-dd HH:mm:ss" />
-                    <fmt:formatDate value="${parsedRegistDate}" pattern="yyyy-MM-dd" />
+                    <fmt:formatDate value="${parsedRegistDate}" pattern="yy-MM-dd" />
                 </td>
             </tr>
             <tr>
                 <th>공지 종료일</th>
                 <td>
                     <fmt:parseDate var="parsedNoticeEndDate" value="${notice.notice_end_date}" pattern="yyyy-MM-dd HH:mm:ss" />
-                    <fmt:formatDate value="${parsedNoticeEndDate}" pattern="yyyy-MM-dd" />
+                    <fmt:formatDate value="${parsedNoticeEndDate}" pattern="yy-MM-dd" />
                 </td>
             </tr>
             <tr>
                 <th>만료일자</th>
                 <td>
                     <fmt:parseDate var="parsedExpireDate" value="${notice.expire_date}" pattern="yyyy-MM-dd HH:mm:ss" />
-                    <fmt:formatDate value="${parsedExpireDate}" pattern="yyyy-MM-dd" />
+                    <fmt:formatDate value="${parsedExpireDate}" pattern="yy-MM-dd" />
                 </td>
             </tr>
             <tr>
@@ -126,7 +126,7 @@
                 <th>최종 수정일자</th>
                 <td>
                     <fmt:parseDate var="parsedLastChgDate" value="${notice.last_chg_date}" pattern="yyyy-MM-dd HH:mm:ss" />
-                    <fmt:formatDate value="${parsedLastChgDate}" pattern="yyyy-MM-dd" />
+                    <fmt:formatDate value="${parsedLastChgDate}" pattern="yy-MM-dd" />
                 </td>
             </tr>
         </table>

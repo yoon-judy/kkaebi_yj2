@@ -22,7 +22,7 @@ public class ReviewUsController {
 	// 공지사항 전체
 	@GetMapping("/list")
 	public String reviewusList(Model model) {
-		model.addAttribute("reviewus", reviewusService.getAllReviewus());
+		model.addAttribute("reviewus", reviewusService.getAllReviewUs());
 		return "reviewus/list";
 	}
 
